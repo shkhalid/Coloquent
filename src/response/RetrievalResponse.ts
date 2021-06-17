@@ -117,6 +117,7 @@ export abstract class RetrievalResponse<M extends Model = Model> extends Respons
                     let typeMap = this.resourceIndex.get(stub.type);
                     if (typeMap) {
                         let relatedDoc: Resource = typeMap.get(stub.id);
+                        if(relatedDoc)
                         relatedModel = this.indexAsModel(relatedDoc, relation.getType(), includeSubtree);
                     }
                 }
